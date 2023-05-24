@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package math_service;
+
+service Math {
+  rpc magicAdd (MagicAddRequest) returns (MagicAddReply);
+  rpc magicSubtract (MagicSubtractRequest) returns (MagicSubtractReply);
+  rpc magicFindMin (MagicFindMinRequest) returns (MagicFindMinReply);
+  rpc magicFindMax (MagicFindMaxRequest) returns (MagicFindMaxReply);
+  rpc getOperationCount (GetOperationCountRequest) returns (GetOperationCountReply);
+}
+
+message MagicAddRequest {
+  double num1 = 1;
+  double num2 = 2;
+}
+
+message MagicAddReply {
+  double result = 1;
+}
+
+message MagicSubtractRequest {
+  double num1 = 1;
+  double num2 = 2;
+}
+
+message MagicSubtractReply {
+  double result = 1;
+}
+
+message MagicFindMinRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+  int32 num3 = 3;
+}
+
+message MagicFindMinReply {
+  int32 result = 1;
+}
+
+message MagicFindMaxRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+  int32 num3 = 3;
+}
+
+message MagicFindMaxReply {
+  int32 result = 1;
+}
+
+message GetOperationCountRequest {}
+
+message GetOperationCountReply {
+  int32 magicAddCount = 1;
+  int32 magicSubtractCount = 2;
+  int32 magicFindMinCount = 3;
+  int32 magicFindMaxCount = 4;
+}
